@@ -1,0 +1,16 @@
+version: "2"
+services:
+
+  editor:
+    build: build
+    ulimits:
+      nproc: 65535
+      nofile:
+        soft: 20000
+        hard: 40000
+    ports:
+      - "38081:38081"
+
+volumes:
+  data:
+    driver: local
